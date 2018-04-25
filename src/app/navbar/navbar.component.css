@@ -47,6 +47,7 @@
     background-image: url(/assets/images/sprite_logo_small.png);
     background-repeat: no-repeat;
     background-position: -10px 0;
+    /* background-size: 100% 100%; */
     width: 218px;
     height: 70px;
 }
