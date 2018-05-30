@@ -9,6 +9,7 @@ import { LeaderboardBannerComponent } from './leaderboard-banner/leaderboard-ban
 import { BannerComponent } from './banner/banner.component';
 import { ContentComponent } from './content/content.component';
 import { FeaturedComponent } from './featured/featured.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { FeaturedComponent } from './featured/featured.component';
     LeaderboardBannerComponent,
     BannerComponent,
     ContentComponent,
-    FeaturedComponent
+    FeaturedComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

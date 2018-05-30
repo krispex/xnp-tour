@@ -1,8 +1,9 @@
 /* Style the header */
 .header {
-  padding: 10px 16px;
+  padding: 0px 16px;
   background: #fff;
   color: #f1f1f1;
+  height: 60px;
 }
 
 /* Page content */
@@ -20,5 +21,5 @@
 /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
 /* Header height + .content */
 .sticky + .content {
-  padding-top: 80px;
+  padding-top: 60px;
 }
