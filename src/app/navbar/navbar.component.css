@@ -19,7 +19,7 @@
 
 .navbar-inner{*zoom:1}
 
-/* pointless maybe? */
+/* pointless maybe? -actually seems to be the gradient effect */
 .container {
     background: url(/assets/images/download.png) repeat-y center top;
     background-size: contain;

@@ -8,6 +8,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { LeaderboardBannerComponent } from './leaderboard-banner/leaderboard-banner.component';
 import { BannerComponent } from './banner/banner.component';
 import { ContentComponent } from './content/content.component';
+import { FeaturedComponent } from './featured/featured.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ContentComponent } from './content/content.component';
     NavbarComponent,
     LeaderboardBannerComponent,
     BannerComponent,
-    ContentComponent
+    ContentComponent,
+    FeaturedComponent
   ],
   imports: [
     BrowserModule,
