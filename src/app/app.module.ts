@@ -10,6 +10,9 @@ import { BannerComponent } from './banner/banner.component';
 import { ContentComponent } from './content/content.component';
 import { FeaturedComponent } from './featured/featured.component';
 import { FooterComponent } from './footer/footer.component';
+import { CoursesComponent } from './courses/courses.component';
+import { PlayersComponent } from './players/players.component';
+import { PlayerDetailComponent } from './player-detail/player-detail.component';
 
 
 @NgModule({
@@ -20,7 +23,10 @@ import { FooterComponent } from './footer/footer.component';
     BannerComponent,
     ContentComponent,
     FeaturedComponent,
-    FooterComponent
+    FooterComponent,
+    CoursesComponent,
+    PlayersComponent,
+    PlayerDetailComponent
   ],
   imports: [
     BrowserModule,
