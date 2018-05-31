@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CoursesComponent } from './courses/courses.component';
 import { PlayersComponent } from './players/players.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
+import { CourseDetailComponent } from './course-detail/course-detail.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { PlayerDetailComponent } from './player-detail/player-detail.component';
     FooterComponent,
     CoursesComponent,
     PlayersComponent,
-    PlayerDetailComponent
+    PlayerDetailComponent,
+    CourseDetailComponent
   ],
   imports: [
     BrowserModule,
