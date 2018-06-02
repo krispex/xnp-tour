@@ -1,3 +1,6 @@
-<p>
-  course-detail works!
-</p>
+<div *ngIf="course">
+  <h2>{{ course.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{course.id}}</div>
+  <div><span>name: </span>{{course.name}}</div>
+  <div><span>date: </span>{{course.date[0] | date}}</div> <!-->date:'fullDate'<-->
+</div>

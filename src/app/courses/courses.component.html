@@ -1,3 +1,19 @@
-<p>
-  courses works!
-</p>
+<!-- <h2>My courses</h2>
+<ul class="courses">
+  <li *ngFor="let course of courses">
+    <span class="badge">{{course.id}}</span> {{course.name}}
+  </li>
+</ul> -->
+<h2>Courses</h2>
+<ul>
+    <li *ngFor="let course of courses" (click)="onSelect(course)">
+        {{course.name}}
+        <!-- <ul>
+          <li *ngFor="let date of course.date">
+            {{date}}
+          </li>
+        </ul> -->
+    </li>
+</ul>
+
+<app-course-detail [course]="selectedCourse"></app-course-detail>
