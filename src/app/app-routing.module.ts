@@ -8,10 +8,10 @@ import { PlayerDetailComponent } from './player-detail/player-detail.component';
 
 const routes: Routes = [
   { path: 'courses', component: CoursesComponent },
-  { path: 'course_:id', component: CourseDetailComponent },
+  { path: 'course/:id', component: CourseDetailComponent },
   { path: '', component: FeaturedComponent },
   { path: 'players', component: PlayersComponent },
-  { path: 'player_:id', component: PlayerDetailComponent }
+  { path: 'player/:id', component: PlayerDetailComponent }
 ];
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],

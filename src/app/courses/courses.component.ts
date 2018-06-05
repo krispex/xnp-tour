@@ -8,17 +8,12 @@ import { CourseService } from '../course.service';
   styleUrls: ['./courses.component.css']
 })
 export class CoursesComponent implements OnInit {
-  selectedCourse: Course;
+  
   courses: Course[];
 
   getCourses(): void {
     this.courseService.getCourses()
-        .subscribe(courses => this.courses = courses);
-  }
-
-  onSelect(course: Course): void {
-    this.selectedCourse = course;
-    console.log("clicked" + ' ' + course.name);
+    .subscribe(courses => this.courses = courses);
   }
   
   constructor(private courseService: CourseService) { }
