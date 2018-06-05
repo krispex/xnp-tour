@@ -20,6 +20,7 @@ export class CoursesComponent implements OnInit {
     this.selectedCourse = course;
     console.log("clicked" + ' ' + course.name);
   }
+  
   constructor(private courseService: CourseService) { }
 
   ngOnInit() {
