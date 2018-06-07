@@ -8,7 +8,7 @@ import { PlayerDetailComponent } from './player-detail/player-detail.component';
 
 const routes: Routes = [
   { path: 'courses', component: CoursesComponent },
-  { path: 'course/:id', component: CourseDetailComponent },
+  { path: 'course/:id/:dateIndex', component: CourseDetailComponent },
   { path: '', component: FeaturedComponent },
   { path: 'players', component: PlayersComponent },
   { path: 'player/:id', component: PlayerDetailComponent }

@@ -12,6 +12,7 @@ import { CourseService }  from '../course.service';
 })
 export class CourseDetailComponent implements OnInit {
   @Input() course: Course;
+  @Input() currentDate: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,9 +25,13 @@ export class CourseDetailComponent implements OnInit {
   }
 
   getCourse(){
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.courseService.getCourse(id)
-    .subscribe(course => this.course = course);
+    const idx = +this.route.snapshot.paramMap.get('id');
+    this.currentDate = +this.route.snapshot.paramMap.get('dateIndex');
+    this.courseService.getCourse(idx)
+      .subscribe(coursey => this.course = coursey);
+    // this.courseService.getCourse(idx)
+    //   .subscribe(coursey => this.currentDate = coursey.date[datex]);
+    //console.log(this.course);
+    //console.log(idx);
   }
-
 }
