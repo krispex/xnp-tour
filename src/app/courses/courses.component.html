@@ -6,20 +6,21 @@
 </ul> -->
 <h2>Courses</h2>
 <ul>
-  <li *ngFor="let course of courses">
+  <div *ngFor="let course of courses.slice().reverse()">
     <!-- <a routerLink="/course/{{course.id}}">
       {{course.name}}
     </a> -->
-    {{course.name}}
+    <!-- {{course.name}} -->
     
-    <ul>
+    <!-- <ul> -->
       <li *ngFor="let date of course.date; let i = index">
+          {{date}}
         <a routerLink="/course/{{course.id}}/{{i}}">
-          {{date}} {{i}}
+          {{course.name}}
           
         </a>
         
       </li>
-    </ul>
-  </li>
+    <!-- </ul> -->
+    </div>
 </ul>
