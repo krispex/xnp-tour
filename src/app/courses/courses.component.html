@@ -4,9 +4,25 @@
     <span class="badge">{{course.id}}</span> {{course.name}}
   </li>
 </ul> -->
+<table id="myTable">
+  <tr>
+    <th onclick="sortTable(0)">Date</th>
+    <th onclick="sortTable(1)">Course</th>
+  </tr>
+  <ng-container *ngFor="let course of courses">
+    <tr *ngFor="let date of course.date">
+      <td>
+        {{date}}
+      </td>
+      <td>
+        {{course.name}}
+      </td>
+    </tr>
+  </ng-container>
+</table>
 <h2>Courses</h2>
 <ul>
-  <div *ngFor="let course of courses.slice().reverse()">
+  <div *ngFor="let course of courses">
     <!-- <a routerLink="/course/{{course.id}}">
       {{course.name}}
     </a> -->
