@@ -127,7 +127,7 @@ export class CoursesComponent implements OnInit {
         set the direction to "desc" and run the while loop again.*/
         if (switchcount == 0 && dir == "asc") {
           dir = "desc";
-          this.initialize = false;
+          this.initialize = true;
         }
       }
     }
