@@ -1,42 +1,19 @@
-<!-- <h2>My courses</h2>
-<ul class="courses">
-  <li *ngFor="let course of courses">
-    <span class="badge">{{course.id}}</span> {{course.name}}
-  </li>
-</ul> -->
 <table id="myTable">
   <tr>
-    <th onclick="sortTable(0)">Date</th>
-    <th onclick="sortTable(1)">Course</th>
+    <th (click)="sortTable(0)">Date</th>
+    <th (click)="sortTable(1)">Course</th>
   </tr>
   <ng-container *ngFor="let course of courses">
-    <tr *ngFor="let date of course.date">
+    <tr *ngFor="let date of course.date; let i = index">
       <td>
         {{date}}
       </td>
-      <td>
-        {{course.name}}
+      <td id="pointer" routerLink="/course/{{course.id}}/{{i}}">
+          {{course.name}}
       </td>
     </tr>
+    
   </ng-container>
 </table>
-<h2>Courses</h2>
-<ul>
-  <div *ngFor="let course of courses">
-    <!-- <a routerLink="/course/{{course.id}}">
-      {{course.name}}
-    </a> -->
-    <!-- {{course.name}} -->
-    
-    <!-- <ul> -->
-      <li *ngFor="let date of course.date; let i = index">
-          {{date}}
-        <a routerLink="/course/{{course.id}}/{{i}}">
-          {{course.name}}
-          
-        </a>
-        
-      </li>
-    <!-- </ul> -->
-    </div>
-</ul>
+
+{{initializeTable(0)}}
