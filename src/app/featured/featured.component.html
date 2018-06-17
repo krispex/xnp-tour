@@ -8,12 +8,16 @@
       <td>
         {{date}}
       </td>
-      <td id="pointer" routerLink="/course/{{course.id}}/{{i}}">
+      <td id="pointer" routerLink="/course/{{course.id}}/{{course.date[i]}}">
           {{course.name}}
       </td>
     </tr>
     
   </ng-container>
 </table>
+{{newCourses[0].id}}
+{{newCourses[0].name}}
+{{newCourses[0].date}}
+
 
 {{initializeTable(0)}}
