@@ -1,23 +1,4 @@
-<table id="myTable">
-  <tr>
-    <!-- <th (click)="sortTable(0)">Date</th>
-    <th (click)="sortTable(1)">Course</th> -->
-  </tr>
-  <ng-container *ngFor="let course of courses">
-    <tr hidden="hidden" *ngFor="let date of course.date; let i = index">
-      <td>
-        {{date}}
-      </td>
-      <td id="pointer" routerLink="/course/{{course.id}}/{{course.date[i]}}">
-          {{course.name}}
-      </td>
-    </tr>
-    
-  </ng-container>
-</table>
-{{newCourses[0].id}}
-{{newCourses[0].name}}
-{{newCourses[0].date}}
-
-
-{{initializeTable(0)}}
+<img src="../assets/images/courseImages/{{newCourses[0].id}}.png">
+<h2 id="pointer" routerLink="/course/{{newCourses[0].id}}/{{newCourses[0].date}}">
+  {{newCourses[0].date}} {{newCourses[0].name}}
+</h2>
