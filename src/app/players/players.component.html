@@ -1,13 +1,6 @@
-<h2>Players</h2>
-<ul>
-    <li *ngFor="let player of players" (click)="onSelect(player)">
-        {{player.name}}
-        <!-- <ul>
-          <li *ngFor="let date of course.date">
-            {{date}}
-          </li>
-        </ul> -->
-    </li>
-</ul>
-
-<app-player-detail [player]="selectedPlayer"></app-player-detail>
+<h1>XNP TOUR Players</h1>
+<div *ngFor="let player of players" (click)="onSelect(player)">
+  <h2 id="pointer" routerLink="/player/{{player.id}}">
+    {{player.name}}
+  </h2>
+</div>

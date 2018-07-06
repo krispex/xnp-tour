@@ -7,8 +7,13 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root',
 })
 export class PlayerService {
+  
   getPlayers(): Observable<Player[]> {
     return of(PLAYERS);
+  }
+
+  getPlayer(id: number): Observable<Player>{
+    return of(PLAYERS.find(course => course.id === id));
   }
   
   constructor() { }

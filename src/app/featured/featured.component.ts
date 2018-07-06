@@ -41,7 +41,6 @@ export class FeaturedComponent implements OnInit {
         y++;
       }
     }
-    console.log(this.newCourses);
   }
 
   sortCourses(){
@@ -52,6 +51,6 @@ export class FeaturedComponent implements OnInit {
         return 1;
       return 0;
     }
-    console.log(this.newCourses.sort(compare));
+    this.newCourses.sort(compare);
   }
 }
