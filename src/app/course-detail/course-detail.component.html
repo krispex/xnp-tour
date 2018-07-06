@@ -1,5 +1,5 @@
-<div *ngIf="courseDate; else notFound">
-  <div *ngIf="course">
+<div *ngIf="course; else courseNotFound">
+  <div *ngIf="courseDate; else dateNotFound">
     <img src="../assets/images/courseImages/{{course.id}}.png">
     <h2>{{ course.name | uppercase }} Details</h2>
     <div><span>id: </span>{{course.id}}</div>
@@ -8,11 +8,16 @@
   </div>
   <div>
     <h2>Scores</h2>
-  
   </div>
 </div>
-<ng-template #notFound>
+
+<ng-template #courseNotFound>
   <h1>
-    PAGE NOT FOUND
+    PAGE NOT FOUND course does not exist.
+  </h1>
+</ng-template>
+<ng-template #dateNotFound>
+  <h1>
+    PAGE NOT FOUND course date does not exist.
   </h1>
 </ng-template>
