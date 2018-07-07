@@ -10,8 +10,8 @@ import { PlayerService } from '../player.service';
 })
 export class PlayerDetailComponent implements OnInit {
   @Input() player: Player;
-  players: Player[];
-  currentPlayer: String;
+  //players: Player[];
+  //currentPlayer: String;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,7 +24,7 @@ export class PlayerDetailComponent implements OnInit {
 
   getPlayer(){
     const idx = +this.route.snapshot.paramMap.get('id');
-    this.currentPlayer = this.route.snapshot.paramMap.get('name');
+    //this.currentPlayer = this.route.snapshot.paramMap.get('name');
     this.playerService.getPlayer(idx)
       .subscribe(coursey => this.player = coursey);
     // this.courseService.getCourse(idx)
