@@ -14,6 +14,8 @@ import { CoursesComponent } from './courses/courses.component';
 import { PlayersComponent } from './players/players.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
+import { TypsComponentComponent } from './typs-component/typs-component.component';
+import { TypsComponent } from './typs/typs.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { CourseDetailComponent } from './course-detail/course-detail.component';
     CoursesComponent,
     PlayersComponent,
     PlayerDetailComponent,
-    CourseDetailComponent
+    CourseDetailComponent,
+    TypsComponentComponent,
+    TypsComponent
   ],
   imports: [
     BrowserModule,

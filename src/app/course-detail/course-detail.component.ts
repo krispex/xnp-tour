@@ -1,11 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Course } from '../course';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Player } from '../player';
 import { PlayerService } from '../player.service';
-
+import { Course } from '../course';
 import { CourseService }  from '../course.service';
+import { Score } from '../score';
+import { ScoreService } from '../score.service';
 
 @Component({
   selector: 'app-course-detail',
@@ -18,16 +19,22 @@ export class CourseDetailComponent implements OnInit {
   courseID: number;
   courseDate: string;
   players: Player[];
+  scores: Score[];
+  numbers: number[];
 
   constructor(
     private route: ActivatedRoute,
     private courseService: CourseService,
     private location: Location,
-    private playerService: PlayerService
-  ) { }
+    private playerService: PlayerService,
+    private scoreService: ScoreService
+  ) { 
+    this.numbers = Array(18).fill(0).map((x,i)=>i);
+  }
 
   ngOnInit() {
     this.getCourse();
+    this.getScores();
   }
 
   getCourse(){
@@ -50,8 +57,10 @@ export class CourseDetailComponent implements OnInit {
     //console.log(idx);
   }
 
-  getPlayers(): void {
-    this.playerService.getPlayers()
-        .subscribe(players => this.players = players);
+  getScores(){
+    this.scoreService.getScores()
+      .subscribe(scorey => this.scores = scorey);
+    console.log(this.scores);
   }
+
 }
