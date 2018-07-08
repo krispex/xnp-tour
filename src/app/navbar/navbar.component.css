@@ -66,7 +66,7 @@
 .nav-container {
     display: block;
     float: none;
-    background: url(/assets/images/download1.png) repeat-y 275px 0;
+    /* background: url(/assets/images/download1.png) repeat-y 275px 0; */
     padding: 0 2px;
     height: 70px;
     margin-bottom: 0;

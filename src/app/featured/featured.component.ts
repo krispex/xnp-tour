@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Course } from '../course';
 import { CourseService } from '../course.service';
-import { newCourse } from '../newCourse';
+import { NewCourse } from '../newCourse';
 
 @Component({
   selector: 'app-featured',
@@ -12,8 +12,8 @@ export class FeaturedComponent implements OnInit {
 
   courses: Course[];
   initialize: boolean = true;
-  newCourses: newCourse[] = [];
-  sortedCourses: newCourse[];
+  newCourses: NewCourse[] = [];
+  sortedCourses: NewCourse[];
 
   constructor(private courseService: CourseService) { }
 
