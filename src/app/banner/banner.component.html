@@ -1,8 +1,14 @@
 <div class="header" id="myHeader">
-  <span>My Header</span>
-  <div>
-    <span>More Text</span>
-  </div>
+  <div>Total Strokes</div>
+  
+
+  <table id="myTable">
+    <tr>
+      <td *ngFor="let score of totalScores; let i = index">
+        {{score.pos}} {{score.name}} {{score.totalScore}}
+      </td>
+    </tr>
+  </table>
 </div>
 <div class="content"></div>
 <!-- <div class="header" id="myHeader">
