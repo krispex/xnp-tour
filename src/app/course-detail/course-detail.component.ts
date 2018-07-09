@@ -116,6 +116,7 @@ export class CourseDetailComponent implements OnInit {
       return 0;
     }
     this.newScores.sort(compare);
+    console.log(this.newScores);
   }
 
   setPOS(){

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Score } from '../score';
 import { ScoreService } from '../score.service';
 import { TotalScore } from '../totalScore';
+import { PlayerService } from '../player.service';
+import { Player } from '../player';
 
 @Component({
   selector: 'app-banner',
@@ -12,9 +14,11 @@ export class BannerComponent implements OnInit {
 
   scores: Score[];
   totalScores: TotalScore[] = [];
+  players: Player[];
 
   constructor(
-    private scoreService: ScoreService
+    private scoreService: ScoreService,
+    private playerService: PlayerService
   ) { }
 
   
@@ -39,7 +43,7 @@ export class BannerComponent implements OnInit {
         header.classList.remove("sticky");
       }
     }
-
+    this.getPlayers();
     this.getScores();
     this.organizeScoresArray();
     this.sortScores();
@@ -49,24 +53,44 @@ export class BannerComponent implements OnInit {
   getScores(){
     this.scoreService.getScores()
       .subscribe(scorey => this.scores = scorey);
-    console.log(this.scores);
+  }
+
+  getPlayers(){
+    this.playerService.getPlayers()
+      .subscribe(players => this.players = players);
   }
 
   organizeScoresArray(){
     let y = 0;
-    for(let i = 0; i < this.scores.length; i++){
-      if(Number(this.scores[i].id) == i+1){
-        let newScore = {
-          pos:0,
-          id:this.scores[i].id,
-          name:this.scores[i].name,
-          totalScore:0        
-        }
-        for(let x = 0; x < 18; x++){
-          newScore.totalScore += Number(this.scores[i]["hole"+(x+1)]);
-        }
-        this.totalScores.push(newScore);
+    for(let p = 0; p < this.players.length; p++){
+      //loops for each player (4 times)
+      let newScore = {
+        pos:0,
+        id:"0",
+        name:"",
+        totalScore:0
       }
+      newScore.id = this.players[p].id.toString();
+      newScore.name = this.players[p].name;
+      
+      for(let i = 0; i < this.scores.length; i++){
+        //loops for each score in the score object (3 times)
+        if(Number(this.scores[i].id) == p+1){
+          //check to see if player exists in score object
+          //if score.id 1 = 1
+          for(let x = 0; x < 18; x++){
+            //loop through all holes and add to total score
+            newScore.totalScore += Number(this.scores[i]["hole"+(x+1)]);
+          }
+        }
+      }
+      this.totalScores.push(newScore);
+      for(let i = 0; i < this.totalScores.length; i++){
+        if(this.totalScores[i].totalScore == 0){
+          this.totalScores.splice(i);
+        }
+      }
+      console.log(this.totalScores);
     }
   }
 
@@ -79,14 +103,12 @@ export class BannerComponent implements OnInit {
       return 0;
     }
     this.totalScores.sort(compare);
-    this.totalScores.length = 3;
   }
 
   setPOS(){
     for(let i = 0; i < this.totalScores.length; i++){
       this.totalScores[i].pos = i+1;
     }
-    console.log(this.totalScores);
   }
 
 }
